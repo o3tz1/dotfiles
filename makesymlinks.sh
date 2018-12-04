@@ -9,7 +9,7 @@
 
 dir=~/dotfiles			# dotfiles directory
 olddir=~/dotfiles_old		# old dotfiles backup directory
-files "bashrc vimrc"		#list of files/dirs to symlink in ~
+files="bashrc vimrc"		#list of files/dirs to symlink in ~
 
 #####
 
@@ -22,7 +22,7 @@ mkdir -p $olddir
 echo "...done"
 
 # Change to the dotfiles directory
-echo "Changing to the $dir directory
+echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
