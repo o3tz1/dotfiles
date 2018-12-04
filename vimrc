@@ -1,13 +1,21 @@
-" General "
+"""""
+"General 
+"""""
 set nocompatible
 filetype indent plugin on
 
-" Colors "
+
+"""""
+"Colors 
+"""""
 set t_Co=256
 set background=dark
 syntax enable
 
-" UI "
+
+"""""
+"UI 
+"""""
 set number
 set numberwidth=2
 set cul
@@ -16,7 +24,9 @@ set laststatus=2
 set incsearch
 set ruler
 
-" Format&Layout "
+"""""
+"Format&Layout 
+"""""
 set autoindent
 set tabstop=2
 set softtabstop=4
@@ -29,13 +39,24 @@ set nowrap
 
 set mouse=a
 
-" Plugins "
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimplyFold'
-Plugin 'Valloric/YouCompleteMe'
-call vundle#end()
+"""""
+"Plugins 
+"""""
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+
+Plug 'plasticboy/vim-markdown'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
 filetype plugin indent on
 set foldmethod=indent
 set foldlevel=99
