@@ -54,6 +54,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-pandoc/vim-pandoc'
 
 call plug#end()
 
@@ -64,3 +65,13 @@ nnoremap <space> za
 
 " Custom commands "
 set pastetoggle=<F11>
+
+" Disabling arrow keys for additional masochistic effect  "
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
+nnoremap <right> <nop>
+inoremap <up>    <nop>
+inoremap <down>  <nop>
+inoremap <left>  <nop>
+inoremap <right> <nop>
