@@ -21,5 +21,6 @@ Nothing fancy: dotfiles for bashrc and vimrc.
 * plasticboy/vim-markdown
 * Valloric/YouCompleteMe
 * scrooloose/nerdtree
+* vim-pandoc/vim-pandoc
 
 ***

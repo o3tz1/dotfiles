@@ -7,9 +7,9 @@
 
 ##### Declare variables
 
-dir=~/dotfiles			# dotfiles directory
-olddir=~/dotfiles_old		# old dotfiles backup directory
-files="bashrc vimrc tmux.conf"		#list of files/dirs to symlink in ~
+dir=~/dotfiles			                # dotfiles directory
+olddir=~/dotfiles_old		            # old dotfiles backup directory
+files="bashrc vimrc tmux.conf"		  #list of files/dirs to symlink in ~
 
 #####
 
