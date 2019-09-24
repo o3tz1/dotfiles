@@ -54,8 +54,9 @@ call plug#begin('~/.vim/bundle')
 Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
