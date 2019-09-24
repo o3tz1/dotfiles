@@ -12,6 +12,9 @@ Nothing fancy: dotfiles for bashrc and vimrc.
     $ ./makesymlinks.sh
     $ chmod +x ycm_install.sh
     $ ./ycm_install.sh
+    $ apt/yum install zsh zsh-syntax-highlighting
+    $ apt/yum install rxvt-unicode
+
     
     ($ git gud)  #Highly optional
     
