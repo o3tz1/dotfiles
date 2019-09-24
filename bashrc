@@ -62,6 +62,9 @@ fi
 alias whatismyip='curl https://ipinfo.io/ip'
 alias vi='/usr/bin/vim'
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
+alias weather="curl v2.wttr.in"
+alias e64=encode64
+alias d64=decode64
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -69,3 +72,19 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+encode64() {
+    if [[ $# -eq 0 ]]; then
+        cat | base64
+    else
+        printf '%s' $1 | base64
+    fi
+}
+
+decode64() {
+    if [[ $# -eq 0 ]]; then
+        cat | base64 --decode
+    else
+        printf '%s' $1 | base64 --decode
+    fi
+}
