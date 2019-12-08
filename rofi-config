@@ -1,0 +1,62 @@
+! ------------------------------------------------------------------------------
+!                      ROFI Settings
+! ------------------------------------------------------------------------------
+! General
+rofi.font:                DejaVu Sans Mono 9
+rofi.fake-transparency:   true
+rofi.hide-scrollbar:      true
+rofi.bw: 2
+
+! Layout
+rofi.width:              30
+rofi.column:             4
+rofi.location:           0
+rofi.lines:              1
+rofi.padding:            10
+rofi.sidebar-mode:       false
+rofi.fullscreen:         false
+
+# ! ------------------------------------------------------------------------------
+# ! ROFI Color theme
+# ! Copyright: Edgar Talledos
+# ! ------------------------------------------------------------------------------
+# rofi.color-normal:                   #FFFFFF, #c6c6c6, argb:00000000, #c6c6c6, #282A36
+# rofi.color-urgent:                   #FFFFFF, #ff81ff, argb:00000000, #ff817f, #282A36
+# rofi.color-active:                   #FFFFFF, #8ac4ff, argb:00000000, #8ac4ff, #282A36
+# rofi.color-window:                   #282A36, #c6c6c6
+# rofi.separator-style:                none
+
+! Base16 Solarized Dark
+! Author: Ethan Schoonover (http://ethanschoonover.com/solarized)
+
+! base00: #002b36
+! base01: #073642
+! base02: #586e75
+! base03: #657b83
+! base04: #839496
+! base05: #93a1a1
+! base06: #eee8d5
+! base07: #fdf6e3
+! base08: #dc322f
+! base09: #cb4b16
+! base0A: #b58900
+! base0B: #859900
+! base0C: #2aa198
+! base0D: #268bd2
+! base0E: #6c71c4
+! base0F: #d33682
+
+! Enable the extended coloring options
+rofi.color-enabled: true
+
+! Property Name     BG       Border   Separator
+# rofi.color-window:  #073642, #073642, #002b36
+rofi.color-window:  #073642, #859900, #002b36
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  #073642, #93a1a1, #073642, #073642, #fdf6e3
+rofi.color-active:  #073642, #268bd2, #073642, #073642, #268bd2
+rofi.color-urgent:  #073642, #dc322f, #073642, #073642, #dc322f
+
+! Set the desired separator style
+rofi.separator-style: none
