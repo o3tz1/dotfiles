@@ -14,7 +14,7 @@ Nothing fancy: dotfiles for bashrc and vimrc.
     $ ./ycm_install.sh
     $ apt/yum install zsh zsh-syntax-highlighting
     $ apt/yum install rxvt-unicode
-    $ apt install lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot
+    $ apt install lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr
 
     
     ($ git gud)  #Highly optional
