@@ -33,3 +33,17 @@ for file in $files; do
    	echo "Creating symlink to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done
+
+
+# i3
+# ln -s ~/dotfiles/i3-config ~/.config/i3/config
+
+# Rofi
+# mkdir ~/.config/rofi
+# ln -s ~/dotfiles/rofi-config ~/.config/rofi/config
+
+# i3blocks
+# ln -s ~/dotfiles/i3blocks.conf ~/.config/i3/i3blocks.conf
+
+# Compton
+# ln -s ~/dotfiles/compton.conf ~/.config/compton.conf
