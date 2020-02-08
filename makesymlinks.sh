@@ -36,10 +36,11 @@ done
 
 
 # i3
+# mkdir -p ~/.config/i3
 # ln -s ~/dotfiles/i3-config ~/.config/i3/config
 
 # Rofi
-# mkdir ~/.config/rofi
+# mkdir -p ~/.config/rofi
 # ln -s ~/dotfiles/rofi-config ~/.config/rofi/config
 
 # i3blocks
