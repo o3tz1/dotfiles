@@ -2,7 +2,7 @@
 
 ! special
 *.foreground: #93a1a1
-*.background: #141c21
+*.background: [70]#141c21
 *.cursorColor: magenta
 
 ! black
@@ -37,11 +37,10 @@
 *.color7: #bfbaac
 *.color15: #fdf6e3
 
-
-*.font: xft:Iosevka:style=Regular:size=12
-*.boldFont: xft:Iosevka:style=Bold:size=12
-*.italicFont: xft:Iosevka:style=Italic:size=12
-*.boldItalicFont: xft:Iosevka:style=Bold Italic:size=12
+*.font: xft:Iosevka:style=Regular:size=11
+*.boldFont: xft:Iosevka:style=Bold:size=11
+*.italicFont: xft:Iosevka:style=Italic:size=11
+*.boldItalicFont: xft:Iosevka:style=Bold Italic:size=11
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 123x49
@@ -93,7 +92,22 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !! F11 fullscreen
 URxvt.keysym.F11: perl:fullscreen:switch
 
-
 !! Matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
+
+XTerm.vt100.saveLines: 4096
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 8
+
+! Xcursor
+Xcursor.theme: Vanilla-DMZ
+Xcursor.size:   16
+! Xft
+Xft.hinting:    True
+Xft.hintstyle:  hintfull
+Xft.antialias:   1
+Xft.autohint:   False
+Xft.lcdfilter:  lcddefault
+Xft.rgba:   rgb
+Xft.dpi: 96
