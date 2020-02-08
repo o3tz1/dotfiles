@@ -35,7 +35,8 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set smarttab
-set nowrap
+set wrap
+"set nowrap
 
 set mouse=a
 
