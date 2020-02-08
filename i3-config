@@ -3,6 +3,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
+# font pango:Iosevka, monospace 9
 
 # thin borders
 hide_edge_borders both
@@ -175,6 +176,7 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         tray_output primary
         font pango:monospace 8
+        # font pango:Iosevka, monospace 9
         colors {
                 background $bg-color
                 separator #757575
@@ -229,3 +231,35 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # exec --no-startup-id pulseaudio
 # exec --no-startup-id pa-applet
 # bindsym $mod+Ctrl+m exec pavucontrol
+
+set $Locker i3lock -c 722F37 && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+a mode "$mode_system"
+
+# Move workspace
+
+mode "move_workspace" {
+    bindsym Up move workspace to output up
+    bindsym Down move workspace to output down
+    bindsym Left move workspace to output left
+    bindsym Up move workspace to output up
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym $mod+m mode "default"
+}
+bindsym $mod+o mode "move_workspace"  
