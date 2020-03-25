@@ -65,6 +65,8 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias weather="curl v2.wttr.in"
 alias e64=encode64
 alias d64=decode64
+alias cls=clear
+alias gcal='gcal -s 1 -K --iso-week-number=yes -q fi'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -86,5 +88,24 @@ decode64() {
         cat | base64 --decode
     else
         printf '%s' $1 | base64 --decode
+    fi
+}
+
+pdfgen() {
+    if [ $# -eq 0 ]; then
+        echo "Supply a markdown filename as an argument"
+    else
+        in=$1
+        out=$(echo $in | cut -f 1 -d '.')
+        pandoc $in -o $out'.pdf' --from markdown --template template.latex --listings --toc -V lang=fi
+    fi
+}
+
+csvcat() {
+    if [ $# -eq 0 ]; then
+        echo "Supply a markdown filename as an argument"
+    else
+        in=$1
+        cat $in | column -t -s, | less -S 
     fi
 }
