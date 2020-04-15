@@ -6,11 +6,14 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History:
-HISTCONTROL=ignoredups:ignorespace
-HISTIGNORE="&:ls:exit:lo:ll:history"
-HISTSIZE=1000
-HISTFILESIZE=10000
-HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=~/.zhistory
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
+# Bash like, long history. 
+alias history='fc -il 1'
 
 #Exports
 export EDITOR='/usr/bin/vim'
@@ -47,6 +50,8 @@ alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
 alias weather='curl v2.wttr.in'
 alias e64=encode64
 alias d64=decode64
+alias cls=clear
+alias gcal='gcal -s 1 -K --iso-week-number=yes -q fi'
 
 encode64() {
     if [[ $# -eq 0 ]]; then
@@ -62,6 +67,30 @@ decode64() {
     else
         printf '%s' $1 | base64 --decode
     fi
+}
+
+pdfgen() {
+    if [ $# -eq 0 ]; then
+        echo "Supply a markdown filename as an argument"
+    else
+        in=$1
+        out=$(echo $in | cut -f 1 -d '.')
+        pandoc $in -o $out'.pdf' --from markdown --template template.latex --listings --toc -V lang=fi
+    fi
+}
+
+csvcat() {
+    if [ $# -eq 0 ]; then
+        echo "Supply a markdown filename as an argument"
+    else
+        in=$1
+        cat $in | column -t -s, | less -S 
+    fi
+}
+
+function my_ip {
+    # Change interface
+    /sbin/ifconfig eth0 | grep 'inet ' | awk '{ print $2}'
 }
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
