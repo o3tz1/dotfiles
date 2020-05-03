@@ -9,7 +9,7 @@
 
 dir=~/dotfiles			                # dotfiles directory
 olddir=~/dotfiles_old		            # old dotfiles backup directory
-files="bashrc vimrc tmux.conf"		  #list of files/dirs to symlink in ~
+files="bashrc vimrc tmux.conf Xresources zshrc wgetrc curlrc"		  #list of files/dirs to symlink in ~
 
 #####
 
@@ -34,17 +34,24 @@ for file in $files; do
 	ln -s $dir/$file ~/.$file
 done
 
-
 # i3
-# mkdir -p ~/.config/i3
-# ln -s ~/dotfiles/i3-config ~/.config/i3/config
+mkdir -p ~/.config/i3
+ln -s ~/dotfiles/i3-config ~/.config/i3/config
 
 # Rofi
-# mkdir -p ~/.config/rofi
-# ln -s ~/dotfiles/rofi-config ~/.config/rofi/config
+mkdir -p ~/.config/rofi
+ln -s ~/dotfiles/rofi-config ~/.config/rofi/config
 
 # i3blocks
-# ln -s ~/dotfiles/i3blocks.conf ~/.config/i3/i3blocks.conf
+ln -s ~/dotfiles/i3blocks.conf ~/.config/i3/i3blocks.conf
 
 # Compton
-# ln -s ~/dotfiles/compton.conf ~/.config/compton.conf
+ln -s ~/dotfiles/compton.conf ~/.config/compton.conf
+
+# Ranger
+mkdir -p ~/.config/ranger/
+ln -s ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
+
+# Alacritty
+mkdir -p ~/.config/alacritty
+ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
