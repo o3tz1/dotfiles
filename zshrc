@@ -53,6 +53,8 @@ alias d64=decode64
 alias cls=clear
 alias gcal='gcal -s 1 -K --iso-week-number=yes -q fi'
 alias myips="ip -o addr | awk '{split(\$4, a, \"/\"); print \$2\" : \"a[1]}' | grep -v '::'"
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
 
 encode64() {
     if [[ $# -eq 0 ]]; then
@@ -87,6 +89,17 @@ csvcat() {
         in=$1
         cat $in | column -t -s, | less -S 
     fi
+}
+
+urlencode() {
+    [ $# -ne 1 ] && return 1;
+	  echo -ne "$1" | perl -pe 's/\W/"%".unpack "H*",$&/gei'
+	  echo
+}
+
+urldecode() {
+    [[ $# -ne 1 ]] && return 1
+    echo "$1" | perl -pe 's/%([0-9a-f]{2})/pack "H*", $1/gie'
 }
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
