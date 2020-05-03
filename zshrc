@@ -52,6 +52,7 @@ alias e64=encode64
 alias d64=decode64
 alias cls=clear
 alias gcal='gcal -s 1 -K --iso-week-number=yes -q fi'
+alias myips="ip -o addr | awk '{split(\$4, a, \"/\"); print \$2\" : \"a[1]}' | grep -v '::'"
 
 encode64() {
     if [[ $# -eq 0 ]]; then
@@ -86,11 +87,6 @@ csvcat() {
         in=$1
         cat $in | column -t -s, | less -S 
     fi
-}
-
-function my_ip {
-    # Change interface
-    /sbin/ifconfig eth0 | grep 'inet ' | awk '{ print $2}'
 }
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
