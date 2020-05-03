@@ -13,13 +13,13 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "70" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 36 -padding 500 -opacity "90"
 
 # change focus
 bindsym $mod+h focus left
@@ -107,6 +107,7 @@ assign [class="spotify"] $workspace9
 assign [class="Firefox"] $workspace2
 assign [class="Gnome-terminal"] $workspace1
 assign [class="URxvt"] $workspace1
+assign [class="Alacritty"] $workspace1
 assign [class="Nautilus"] $workspace3
 assign [class="Thunderbird"] $workspace4 
 assign [class="Google-chrome"] $workspace4
@@ -153,21 +154,17 @@ mode "resize" {
 # resize mode
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+# Dracula colorscheme
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
 
 # Lock screen using i3lock. Super + x
-bindsym $mod+x exec "i3lock -c 2A2A2A"
+bindsym $mod+x exec "i3lock -c bd93f9"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -175,15 +172,17 @@ bar {
         position top
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         tray_output primary
-        font pango:monospace 8
-        # font pango:Iosevka, monospace 9
+        font pango:Iosevka, monospace 8
         colors {
-                background $bg-color
-                separator #757575
-                #                   border              background          text
-                focused_workspace   $bg-color           $bg-color           $text-color
-                inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-                urgent_workspace    $urgent-bg-color    $urgent-bg-color    $text-color
+                background #282A36
+                statusline #F8F8F2
+                separator  #44475A
+
+                focused_workspace  #44475A #44475A #F8F8F2
+                active_workspace   #282A36 #44475A #F8F8F2
+                inactive_workspace #282A36 #282A36 #BFBFBF
+                urgent_workspace   #FF5555 #FF5555 #F8F8F2
+                binding_mode       #FF5555 #FF5555 #F8F8F2
         }
 }
 
@@ -218,7 +217,7 @@ exec --no-startup-id nm-applet
 
 # Autostart programs
 exec firefox
-exec urxvt
+exec alacritty
 exec nautilus
 
 # Autostart flameshot icon
@@ -232,7 +231,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # exec --no-startup-id pa-applet
 # bindsym $mod+Ctrl+m exec pavucontrol
 
-set $Locker i3lock -c 722F37 && sleep 1
+set $Locker i3lock -c bd93f9 && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
