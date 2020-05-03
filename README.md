@@ -1,6 +1,6 @@
 # dotfiles
-***
-Nothing fancy: dotfiles for bashrc and vimrc.
+
+Nothing fancy
 
 
 ## Installation
@@ -14,12 +14,10 @@ Nothing fancy: dotfiles for bashrc and vimrc.
     $ ./ycm_install.sh
     $ apt/yum install zsh zsh-syntax-highlighting
     $ apt/yum install rxvt-unicode
-    $ apt install lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr
+   
+# Software
 
-    
-    ($ git gud)  #Highly optional
-    
-
+lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger
 
 ## Vim Plugins
 * plasticboy/vim-markdown
@@ -27,4 +25,6 @@ Nothing fancy: dotfiles for bashrc and vimrc.
 * scrooloose/nerdtree
 * vim-pandoc/vim-pandoc
 
-***
+# TODO 
+
+Create installation script for deb/i3
