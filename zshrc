@@ -55,6 +55,7 @@ alias gcal='gcal -s 1 -K --iso-week-number=yes -q fi'
 alias myips="ip -o addr | awk '{split(\$4, a, \"/\"); print \$2\" : \"a[1]}' | grep -v '::'"
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
+alias cn="createnote"
 
 encode64() {
     if [[ $# -eq 0 ]]; then
@@ -101,5 +102,31 @@ urldecode() {
     [[ $# -ne 1 ]] && return 1
     echo "$1" | perl -pe 's/%([0-9a-f]{2})/pack "H*", $1/gie'
 }
+
+createnote() {
+    name="$1"
+    today=$(date +"%d-%m-%Y")
+    file_path_name="$PWD/$name-$today.md"
+    
+    if [ -n "$name" ]; then
+        cat > "$file_path_name" <<EOF
+---
+title: "$name"
+author: ["$(pwd)"]
+date: "$today"
+keywords: [note]
+...
+
+- Topic:
+- Attending:
+
+# "$name"
+
+EOF
+    elif [ -z "$name" ]; then
+        echo "Supply a file name eg. \"\$cust-meeting\"."
+    fi
+}
+
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
