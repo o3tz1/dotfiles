@@ -104,9 +104,9 @@ urldecode() {
 }
 
 createnote() {
-    name="$1"
-    today=$(date +"%d-%m-%Y")
-    file_path_name="$PWD/$name-$today.md"
+    local name="$1"
+    local today=$(date +"%d-%m-%Y")
+    local file_path_name="$PWD/$name-$today.md"
     
     if [ -n "$name" ]; then
         cat > "$file_path_name" <<EOF
