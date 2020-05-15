@@ -112,7 +112,7 @@ createnote() {
         cat > "$file_path_name" <<EOF
 ---
 title: "$name"
-author: ["$(pwd)"]
+author: ["Author"]
 date: "$today"
 keywords: [note]
 ...
