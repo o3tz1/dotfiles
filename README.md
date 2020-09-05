@@ -1,30 +1,17 @@
-# dotfiles
+# my personal dotfiles
 
-Nothing fancy
+- Debian, i3wm, rofi and compton
+- Dracula colorscheme
 
+# Installation
 
-## Installation
-
-    $ apt/yum install git
-    $ git clone https://github.com/o3tz1/dotfiles.git ~
-    $ cd ~/dotfiles/
-    $ chmod +x makesymlinks.sh
-    $ ./makesymlinks.sh
-    $ chmod +x ycm_install.sh
-    $ ./ycm_install.sh
-    $ apt/yum install zsh zsh-syntax-highlighting
-    $ apt/yum install rxvt-unicode
+- Update the system, `sudo apt update && sudo apt upgrade`
+- Download, set permissions and run `install_dots.sh` shell script
    
-# Software
+# Software installed by the installer
 
-lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger
+git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting gcal
 
-## Vim Plugins
-* plasticboy/vim-markdown
-* Valloric/YouCompleteMe
-* scrooloose/nerdtree
-* vim-pandoc/vim-pandoc
+## Note
 
-# TODO 
-
-Create installation script for deb/i3
+> Please read the code and understand it properly before running (as with every unknown code). The author is not responsible for any harm caused by running the script or using the configuration files. 
