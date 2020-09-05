@@ -125,11 +125,11 @@ dir_check ~/.config/alacritty
 ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # change shell to zs
-print_status "Changing shell to ZSH
+print_status "Changing shell to ZSH"
 chsh -s /bin/zsh
 
-print_status "Download rofi dracula theme"
 #Download rofi theme Dracula:
+print_status "Download rofi dracula theme"
 sudo wget https://raw.githubusercontent.com/dracula/rofi/master/config.rasi -O /usr/share/rofi/themes/dracule.rasi
 
 print_good "Script ready, enjoy the new machine!"
