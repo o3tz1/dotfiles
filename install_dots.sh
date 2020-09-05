@@ -73,11 +73,6 @@ error_check 'Package installation'
 # supress messages during package installation
 export DEBIAN_FRONTEND=noninteractive
 
-# System updates
-print_status "Performing apt update and upgrade"
-sudo apt update &>> $logfile && sudo apt -y upgrade &>> $logfile
-error_check 'System updates'
-
 # install software
 print_status "Installing packges: git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting"
 
