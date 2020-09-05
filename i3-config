@@ -19,7 +19,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 36 -padding 500 -opacity "90"
+bindsym $mod+d exec rofi -show run -theme dracula -lines 5 -eh 2 -width 36 -padding 500 -opacity "90"
 
 # change focus
 bindsym $mod+h focus left
