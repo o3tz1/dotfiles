@@ -106,7 +106,9 @@ cd $dir
 
 for file in $files; do
     print_status "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    if [ -f ~/.$file ]; then
+        mv ~/.$file ~/dotfiles_old/
+    fi
     print_status "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
