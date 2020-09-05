@@ -61,7 +61,7 @@ fi
 function install_packages()
 {
 
-echo "sudo apt update &>> $logfile" && echo "sudo apt install -y ${@} &>> $logfile"
+sudo apt update &>> $logfile && sudo apt install -y ${@} &>> $logfile
 error_check 'Package installation'
 
 }
@@ -79,9 +79,9 @@ sudo apt update &>> $logfile && sudo apt -y upgrade &>> $logfile
 error_check 'System updates'
 
 # install software
-print_status "Installing packges: git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh_syntax_highlighting"
+print_status "Installing packges: git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting"
 
-declare -a packages=( git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh_syntax_highlighting );
+declare -a packages=( git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting );
 
 install_packages ${packages[@]}
 
@@ -94,7 +94,7 @@ git clone https://github.com/o3tz1/dotfiles.git ~
 cd ~/dotfiles
 
 dir=~/dotfiles
-olddir=~/dotfile_old
+olddir=~/dotfiles_old
 files="bashrc vimrc tmux.conf Xresources zshrc wgetrc curlrc"
 
 print_status "Creating $olddir for backup"
@@ -108,7 +108,7 @@ for file in $files; do
     print_status "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     print_status "Creating symlink to $file in home directory."
-	  ln -s $dir/$file ~/.$file
+    ln -s $dir/$file ~/.$file
 done
 
 dir_check ~/.config/i3
@@ -137,6 +137,10 @@ vim -E -s <<-EOF
     #PlugUpgrade update Plug plugin manager
     :qa
 EOF
+
+# change shell to zs
+print_status "Changing shell to ZSH
+chsh -s /bin/zsh
 
 print_good "Script ready, enjoy the new machine!"
 print_status "Remember to reboot the system"
