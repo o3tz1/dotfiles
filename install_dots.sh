@@ -10,7 +10,7 @@ set -euo pipefail
 ###### FUNCTIONS ######
 #######################
 
-logfile=/var/log/dotfiles-install.log
+logfile=~/dotfiles-install.log
 mkfifo ${logfile}.pipe
 tee < ${logfile}.pipe $logfile &
 exec &> ${logfile}.pipe
