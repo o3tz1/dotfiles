@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install packages and download dotfiles
-# Some snippets from public projects like da667's Autosnort.
+# Some snippets (logging and printing) from public projects like da667's Autosnort.
 
 # Do not run the code without understanding what it does!
 
