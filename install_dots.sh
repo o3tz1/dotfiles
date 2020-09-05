@@ -129,20 +129,13 @@ ln -s ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
 dir_check ~/.config/alacritty
 ln -s ~/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# install and update vim plugins
-print_status "Installing and updating the vim plugins"
-
-vim -E -s <<-EOF
-    :PlugInstall
-    :PluginUpdate
-    :PlugClean
-    #PlugUpgrade update Plug plugin manager
-    :qa
-EOF
-
 # change shell to zs
 print_status "Changing shell to ZSH
 chsh -s /bin/zsh
+
+print_status "Download rofi dracula theme"
+#Download rofi theme Dracula:
+sudo wget https://raw.githubusercontent.com/dracula/rofi/master/config.rasi -O /usr/share/rofi/themes/dracule.rasi
 
 print_good "Script ready, enjoy the new machine!"
 print_status "Remember to reboot the system"
