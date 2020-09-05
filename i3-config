@@ -13,7 +13,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -217,7 +217,7 @@ exec --no-startup-id nm-applet
 
 # Autostart programs
 exec firefox
-exec alacritty
+exec gnome-terminal
 exec nautilus
 
 # Autostart flameshot icon
