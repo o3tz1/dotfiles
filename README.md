@@ -10,7 +10,34 @@
    
 # Software installed by the installer
 
-git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting gcal
+- git 
+- net-tools 
+- lxappearance 
+- i3 
+- i3lock 
+- i3blocks 
+- rofi 
+- compton
+- feh 
+- arandr 
+- xfce4-power-manager 
+- flameshot 
+- arandr 
+- vim 
+- tmux 
+- wget 
+- curl 
+- ranger 
+- rxvt-unicode 
+- gnome-terminal 
+- zsh 
+- zsh-syntax-highlighting 
+- gcal
+- libimage-exiftool-perl
+- binwalk
+- nmap
+- tcpdump
+
 
 ## Note
 
