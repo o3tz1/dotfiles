@@ -74,9 +74,9 @@ error_check 'Package installation'
 export DEBIAN_FRONTEND=noninteractive
 
 # install software
-print_status "Installing packges: gcal git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting"
+print_status "Installing packges: gcal git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting libimage-exiftool-perl binwalk nmap tcpdump"
 
-declare -a packages=( gcal git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting );
+declare -a packages=( gcal git net-tools lxappearance i3 i3lock i3blocks rofi compton feh arandr xfce4-power-manager flameshot arandr vim tmux wget curl ranger rxvt-unicode gnome-terminal zsh zsh-syntax-highlighting libimage-exiftool-perl binwalk nmap tcpdump);
 
 install_packages ${packages[@]}
 
