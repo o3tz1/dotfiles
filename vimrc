@@ -52,13 +52,14 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
+
+color dracula
 
 filetype plugin indent on
 set foldmethod=indent
@@ -77,3 +78,6 @@ set pastetoggle=<F11>
 "inoremap <down>  <nop>
 "inoremap <left>  <nop>
 "inoremap <right> <nop>
+
+" Bind NerdTree to C-o
+map <C-o> :NERDTreeToggle<CR>
