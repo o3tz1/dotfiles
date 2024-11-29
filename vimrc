@@ -3,7 +3,8 @@
 """""
 set nocompatible
 filetype indent plugin on
-
+set ignorecase
+set smartcase
 
 """""
 "Colors 
